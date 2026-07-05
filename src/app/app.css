@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+.outlet {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-base);
+  /* Halftone texture behind the routed content */
+  background-image: radial-gradient(rgba(245, 197, 24, 0.05) 1px, transparent 1.2px);
+  background-size: 7px 7px;
+}
