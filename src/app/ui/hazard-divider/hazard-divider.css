@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.stripe {
+  flex: 1 1 auto;
+  height: 10px;
+  opacity: 0.85;
+  border-radius: 1px;
+}
+
+.label {
+  flex: 0 0 auto;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-amber);
+  padding: 0.15rem 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--color-amber) 40%, transparent);
+  background: var(--color-base);
+}

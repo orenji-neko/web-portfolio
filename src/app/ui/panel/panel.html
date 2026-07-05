@@ -1,0 +1,13 @@
+<section class="panel" [class.panel--cyan]="accent() === 'cyan'">
+  @if (title()) {
+    <header class="bar font-mono">
+      <span class="dots" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </span>
+      <span class="title">{{ title() }}</span>
+    </header>
+  }
+  <div class="body">
+    <ng-content />
+  </div>
+</section>

@@ -1,0 +1,19 @@
+:host {
+  display: block;
+}
+
+.tw {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.tw-line {
+  min-height: 1.7em;
+}
+
+.caret {
+  color: var(--color-amber);
+  margin-left: 0.1rem;
+}

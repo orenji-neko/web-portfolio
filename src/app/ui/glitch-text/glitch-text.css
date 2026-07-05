@@ -1,0 +1,11 @@
+:host {
+  display: inline-block;
+}
+
+.glitch {
+  position: relative;
+  display: inline-block;
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}

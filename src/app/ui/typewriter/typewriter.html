@@ -1,0 +1,10 @@
+<div class="tw font-mono" aria-live="polite">
+  @for (line of rendered(); track $index) {
+    <div class="tw-line">
+      <span>{{ line }}</span>
+      @if (caret() && !finished() && $last) {
+        <span class="caret fx-caret" aria-hidden="true">▋</span>
+      }
+    </div>
+  }
+</div>

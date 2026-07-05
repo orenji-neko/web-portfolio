@@ -1,0 +1,33 @@
+:host {
+  display: block;
+}
+
+.line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.prompt {
+  color: var(--color-cyan);
+  white-space: nowrap;
+}
+
+.cmd {
+  color: var(--color-ink);
+}
+
+.caret {
+  color: var(--color-amber);
+  margin-left: -0.25rem;
+}
+
+.output {
+  margin-top: 0.4rem;
+}
+
+.output:empty {
+  display: none;
+}

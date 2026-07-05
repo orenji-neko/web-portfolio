@@ -1,0 +1,10 @@
+<div class="line font-mono">
+  <span class="prompt">{{ prompt() }}</span>
+  <span class="cmd">{{ command() }}</span>
+  @if (caret()) {
+    <span class="caret fx-caret" aria-hidden="true">▋</span>
+  }
+</div>
+<div class="output">
+  <ng-content />
+</div>
