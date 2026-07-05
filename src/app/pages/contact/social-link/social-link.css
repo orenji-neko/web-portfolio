@@ -1,0 +1,43 @@
+:host {
+  display: block;
+}
+
+.social {
+  display: grid;
+  grid-template-columns: 6rem 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.9rem;
+  text-decoration: none;
+  color: var(--color-ink);
+  background: var(--color-surface);
+  border: 1px solid #26262d;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.social:hover {
+  border-color: var(--color-cyan);
+  background: var(--color-surface-2);
+}
+
+.label {
+  color: var(--color-cyan);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.handle {
+  color: var(--color-ink);
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arrow {
+  color: var(--color-amber);
+  font-size: 1.2rem;
+}

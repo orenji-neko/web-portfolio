@@ -1,0 +1,23 @@
+@let it = item();
+<div class="stage" [class.stage--last]="last()">
+  <div class="rail" aria-hidden="true">
+    <span class="node"></span>
+    @if (!last()) {
+      <span class="line"></span>
+    }
+  </div>
+
+  <div class="body">
+    <div class="meta font-mono">
+      <span class="tag">{{ it.stage }}</span>
+      <span class="period">{{ it.period }}</span>
+    </div>
+    <h2 class="role">{{ it.role }}</h2>
+    <p class="org">{{ it.org }}</p>
+    <ul class="highlights">
+      @for (h of it.highlights; track $index) {
+        <li>{{ h }}</li>
+      }
+    </ul>
+  </div>
+</div>

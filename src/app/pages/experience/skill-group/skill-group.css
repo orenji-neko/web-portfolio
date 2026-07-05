@@ -1,0 +1,38 @@
+:host {
+  display: block;
+}
+
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.title {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cyan);
+  margin: 0;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  font-size: 0.78rem;
+  padding: 0.25rem 0.6rem;
+  color: var(--color-ink);
+  background: var(--color-surface);
+  border: 1px solid #2f2f37;
+}
+
+.chip:hover {
+  border-color: var(--color-amber);
+}

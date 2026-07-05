@@ -1,0 +1,16 @@
+.pipeline {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.empty {
+  color: var(--color-ink-dim);
+  font-size: 0.85rem;
+}

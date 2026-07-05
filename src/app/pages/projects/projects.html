@@ -1,0 +1,12 @@
+<section class="page">
+  <app-terminal-line command="ls ~/projects --detail" />
+  <h1 class="page-title">Projects</h1>
+
+  <div class="list">
+    @for (project of projects(); track project.id) {
+      <app-project-card [project]="project" />
+    } @empty {
+      <p class="empty font-mono">// no projects yet — add some in projects.data.ts</p>
+    }
+  </div>
+</section>

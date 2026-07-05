@@ -1,0 +1,17 @@
+<section class="page">
+  <app-terminal-line command="./contact.sh --init" [caret]="true" />
+  <h1 class="page-title">Get in touch</h1>
+  <p class="blurb">{{ contact().blurb }}</p>
+
+  <app-panel title="mail --compose" accent="cyan">
+    <a class="email font-mono" [href]="'mailto:' + contact().email">
+      <span class="email-arrow" aria-hidden="true">&rsaquo;</span>{{ contact().email }}
+    </a>
+  </app-panel>
+
+  <div class="socials">
+    @for (link of contact().socials; track link.url) {
+      <app-social-link [link]="link" />
+    }
+  </div>
+</section>

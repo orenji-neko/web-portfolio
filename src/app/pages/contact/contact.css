@@ -1,0 +1,29 @@
+.blurb {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-ink);
+  max-width: 52ch;
+}
+
+.email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  color: var(--color-amber);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.email:hover {
+  text-decoration: underline;
+}
+
+.email-arrow {
+  color: var(--color-cyan);
+}
+
+.socials {
+  display: grid;
+  gap: 0.6rem;
+}

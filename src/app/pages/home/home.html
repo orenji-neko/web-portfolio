@@ -1,0 +1,31 @@
+<section class="page">
+  <app-terminal-line command="cat ~/whoami.txt" [caret]="true" />
+
+  <header class="hero">
+    <p class="role font-mono">{{ profile().role }}</p>
+    <h1 class="name">
+      <app-glitch-text [text]="profile().name" />
+    </h1>
+    <p class="tagline">{{ profile().tagline }}</p>
+    <p class="meta font-mono">
+      <span>{{ profile().location }}</span>
+      <span class="sep">//</span>
+      <span class="status">{{ profile().status }}</span>
+    </p>
+  </header>
+
+  <app-hazard-divider label="channels" />
+
+  <ul class="grid">
+    @for (ch of launchers(); track ch.path) {
+      <li>
+        <a class="card" [routerLink]="ch.path">
+          <span class="card-ch font-mono">CH{{ $index + 2 }}</span>
+          <span class="card-label">{{ ch.label }}</span>
+          <span class="card-cmd font-mono">{{ ch.command }}</span>
+          <span class="card-arrow" aria-hidden="true">&rsaquo;</span>
+        </a>
+      </li>
+    }
+  </ul>
+</section>

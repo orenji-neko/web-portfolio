@@ -1,0 +1,20 @@
+<section class="page">
+  <app-terminal-line command="cat ~/history.log" />
+  <h1 class="page-title">Experience</h1>
+
+  <div class="pipeline">
+    @for (item of experience(); track item.id; let last = $last) {
+      <app-pipeline-stage [item]="item" [last]="last" />
+    } @empty {
+      <p class="empty font-mono">// add roles in experience.data.ts</p>
+    }
+  </div>
+
+  <app-hazard-divider label="skills" />
+
+  <div class="skills">
+    @for (group of skillGroups(); track group.id) {
+      <app-skill-group [group]="group" />
+    }
+  </div>
+</section>

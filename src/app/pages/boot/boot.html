@@ -1,0 +1,14 @@
+<div class="boot fx-scanlines fx-flicker">
+  <div class="boot-inner">
+    <app-typewriter [lines]="lines" [speed]="18" (done)="onDone()" />
+
+    <div class="bar">
+      <div class="bar-track">
+        <div class="bar-fill" [style.width.%]="progress()"></div>
+      </div>
+      <span class="bar-pct font-mono">{{ progress() }}%</span>
+    </div>
+
+    <button type="button" class="skip font-mono" (click)="skip()">skip &rsaquo;&rsaquo;</button>
+  </div>
+</div>

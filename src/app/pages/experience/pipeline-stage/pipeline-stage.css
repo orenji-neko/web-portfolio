@@ -1,0 +1,85 @@
+:host {
+  display: block;
+}
+
+.stage {
+  display: grid;
+  grid-template-columns: 1.75rem 1fr;
+  gap: 1rem;
+}
+
+.rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.node {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-base);
+  border: 3px solid var(--color-amber);
+  box-shadow: 0 0 10px -1px var(--color-amber);
+  margin-top: 0.35rem;
+}
+
+.line {
+  flex: 1 1 auto;
+  width: 2px;
+  margin-top: 0.35rem;
+  background: linear-gradient(var(--color-amber), #2a2a31);
+}
+
+.body {
+  padding-bottom: 1.75rem;
+}
+
+.stage--last .body {
+  padding-bottom: 0;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.72rem;
+}
+
+.tag {
+  padding: 0.1rem 0.45rem;
+  color: var(--color-base);
+  background: var(--color-cyan);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.period {
+  color: var(--color-ink-dim);
+}
+
+.role {
+  margin: 0.4rem 0 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.org {
+  margin: 0.15rem 0 0.6rem;
+  color: var(--color-amber);
+  font-size: 0.9rem;
+}
+
+.highlights {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  line-height: 1.6;
+  color: var(--color-ink);
+}
+
+.highlights li::marker {
+  color: var(--color-cyan);
+}

@@ -1,0 +1,9 @@
+@let g = group();
+<div class="skill-group">
+  <h3 class="title font-mono">{{ g.title }}</h3>
+  <ul class="items">
+    @for (item of g.items; track item) {
+      <li class="chip font-mono">{{ item }}</li>
+    }
+  </ul>
+</div>

@@ -1,0 +1,62 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+}
+
+.boot {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-base);
+  padding: 1.5rem;
+}
+
+.boot-inner {
+  width: min(560px, 100%);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.bar-track {
+  flex: 1 1 auto;
+  height: 10px;
+  background: var(--color-surface-2);
+  border: 1px solid #2c2c33;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--color-amber);
+  box-shadow: 0 0 12px var(--color-amber);
+  transition: width 0.12s linear;
+}
+
+.bar-pct {
+  font-size: 0.75rem;
+  color: var(--color-amber);
+  min-width: 4ch;
+  text-align: right;
+}
+
+.skip {
+  margin-top: 1.25rem;
+  font-size: 0.75rem;
+  color: var(--color-ink-dim);
+  background: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+}
+
+.skip:hover {
+  color: var(--color-cyan);
+}
