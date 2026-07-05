@@ -1,0 +1,85 @@
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.7rem clamp(0.8rem, 3vw, 1.5rem);
+  background: color-mix(in srgb, var(--color-base) 82%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #23232a;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  color: var(--color-ink);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.brand-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-amber);
+  box-shadow: 0 0 10px var(--color-amber);
+}
+
+.brand-ext {
+  color: var(--color-ink-dim);
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 0 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  text-decoration: none;
+  color: var(--color-ink-dim);
+  font-size: 0.82rem;
+  border: 1px solid transparent;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.tab:hover {
+  color: var(--color-ink);
+  border-color: #33333c;
+  background: var(--color-surface);
+}
+
+.tab-index {
+  font-size: 0.62rem;
+  color: var(--color-cyan);
+  opacity: 0.7;
+}
+
+.tab--active {
+  color: var(--color-base);
+  background: var(--color-amber);
+  border-color: var(--color-amber);
+}
+
+.tab--active .tab-index {
+  color: color-mix(in srgb, var(--color-base) 70%, transparent);
+}

@@ -1,0 +1,12 @@
+<footer class="bar font-mono">
+  <span class="item item--ok">
+    <span class="led" aria-hidden="true"></span>
+    SIGNAL OK
+  </span>
+  <span class="item">build: <span class="pass">passing</span></span>
+  <span class="spacer"></span>
+  <button type="button" class="item toggle" (click)="toggleEffects()">
+    fx: {{ effects.reduced() ? 'reduced' : 'full' }}
+  </button>
+  <span class="item clock">{{ clock() }}</span>
+</footer>

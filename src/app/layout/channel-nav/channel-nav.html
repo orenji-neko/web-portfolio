@@ -1,0 +1,23 @@
+<nav class="nav font-mono" aria-label="Sections">
+  <a class="brand" routerLink="/home">
+    <span class="brand-dot" aria-hidden="true"></span>
+    <span class="brand-name">{{ profile().handle }}</span>
+    <span class="brand-ext">.dev</span>
+  </a>
+
+  <ul class="tabs">
+    @for (ch of channels(); track ch.path) {
+      <li>
+        <a
+          class="tab"
+          [routerLink]="ch.path"
+          routerLinkActive="tab--active"
+          [attr.title]="ch.command"
+        >
+          <span class="tab-index" aria-hidden="true">CH{{ $index + 1 }}</span>
+          <span class="tab-label">{{ ch.label }}</span>
+        </a>
+      </li>
+    }
+  </ul>
+</nav>

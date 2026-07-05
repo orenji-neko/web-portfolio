@@ -1,0 +1,62 @@
+:host {
+  display: block;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.4rem clamp(0.8rem, 3vw, 1.5rem);
+  border-top: 1px solid #23232a;
+  background: color-mix(in srgb, var(--color-base) 88%, transparent);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--color-ink-dim);
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.item--ok {
+  color: var(--color-cyan);
+}
+
+.led {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-cyan);
+  box-shadow: 0 0 8px var(--color-cyan);
+}
+
+.pass {
+  color: #57d977;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.toggle {
+  font: inherit;
+  color: var(--color-amber);
+  background: none;
+  border: 1px solid color-mix(in srgb, var(--color-amber) 35%, transparent);
+  padding: 0.1rem 0.5rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.toggle:hover {
+  background: color-mix(in srgb, var(--color-amber) 15%, transparent);
+}
+
+.clock {
+  color: var(--color-ink);
+  min-width: 8ch;
+  text-align: right;
+}
