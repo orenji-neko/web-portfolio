@@ -1,0 +1,7 @@
+<app-section-block sectionId="work" index="01" heading="Selected work">
+  <div class="projects">
+    @for (project of projects(); track project.id) {
+      <app-project-card [project]="project" [index]="$index + 1" [reverse]="$odd" />
+    }
+  </div>
+</app-section-block>

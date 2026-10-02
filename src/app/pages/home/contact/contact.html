@@ -1,0 +1,20 @@
+@let c = contact();
+<section
+  id="contact"
+  class="contact reveal-grow"
+  data-scroll
+  tabindex="-1"
+  aria-labelledby="contact-title"
+>
+  <div class="index">04 — Contact</div>
+  <h2 id="contact-title" class="heading">{{ c.heading }}</h2>
+  <p class="blurb">{{ c.blurb }}</p>
+  <a class="email nudge-right" [href]="'mailto:' + c.email"
+    >{{ c.email }} <app-arrow-icon dir="right" [size]="28"
+  /></a>
+  <ul class="socials">
+    @for (social of c.socials; track social.url) {
+      <li><app-social-link [link]="social" /></li>
+    }
+  </ul>
+</section>

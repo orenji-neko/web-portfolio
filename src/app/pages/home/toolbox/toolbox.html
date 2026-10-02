@@ -1,0 +1,7 @@
+<app-section-block sectionId="toolbox" index="03" heading="Toolbox">
+  <div class="groups">
+    @for (group of skillGroups(); track group.id) {
+      <app-skill-group [group]="group" />
+    }
+  </div>
+</app-section-block>

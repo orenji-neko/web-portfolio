@@ -1,0 +1,51 @@
+@let p = project();
+<article class="card" [class.card--reverse]="reverse()" [attr.aria-labelledby]="p.id + '-name'">
+  <figure class="flow">
+    <div class="flow-stage">
+      <ol
+        class="flow-steps"
+        data-scroll
+        data-scroll-speed="0.02"
+        [attr.aria-label]="'How ' + p.name + ' worked'"
+      >
+        @for (step of p.flow; track $index) {
+          <li class="step" [style.transition-delay.s]="0.3 + $index * 0.15">
+            @if (!$first) {
+              <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            }
+            <div class="step-box">
+              <span class="step-num">{{ $index < 9 ? '0' : '' }}{{ $index + 1 }}</span>
+              <span>{{ step }}</span>
+            </div>
+          </li>
+        }
+      </ol>
+    </div>
+    <figcaption class="flow-caption">How it worked</figcaption>
+  </figure>
+
+  <div class="details">
+    <div class="meta">{{ number() }} · {{ p.kind }}</div>
+    <h3 class="name" [id]="p.id + '-name'">{{ p.name }}</h3>
+    @if (p.subtitle) {
+      <div class="subtitle">{{ p.subtitle }}</div>
+    }
+    <p class="summary">{{ p.summary }}</p>
+    <ul class="stack" aria-label="Tech stack">
+      @for (tech of p.stack; track tech) {
+        <li class="chip">{{ tech }}</li>
+      }
+    </ul>
+    @if (p.links?.length) {
+      <div class="links">
+        @for (link of p.links; track link.url) {
+          <a class="link nudge" [href]="link.url" target="_blank" rel="noopener noreferrer"
+            >{{ link.label }} <app-arrow-icon
+          /></a>
+        }
+      </div>
+    }
+  </div>
+</article>

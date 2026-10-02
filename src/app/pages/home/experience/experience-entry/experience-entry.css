@@ -1,0 +1,88 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 40px;
+  padding: 28px 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+.period {
+  flex: 0 0 200px;
+  padding-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-ink-muted);
+}
+
+.body {
+  flex: 1 1 400px;
+  min-width: 0;
+}
+
+.role {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.org {
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.metric {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  margin-top: 20px;
+  padding: 20px 24px;
+  border: 1px solid var(--color-ink);
+  border-radius: 4px;
+}
+
+.metric-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.metric-after {
+  padding: 0 0.1em;
+  background: var(--color-accent);
+}
+
+.metric-caption {
+  flex: 1 1 220px;
+  color: var(--color-ink-muted);
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-ink-muted);
+}
+
+.highlights li {
+  display: flex;
+  gap: 14px;
+}
+
+.marker {
+  flex: 0 0 auto;
+  width: 7px;
+  height: 7px;
+  margin-top: 10px;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-ink);
+}

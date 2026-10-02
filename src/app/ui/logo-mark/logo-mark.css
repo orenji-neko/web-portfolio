@@ -1,0 +1,14 @@
+:host {
+  display: inline-flex;
+}
+
+.head {
+  fill: var(--color-accent);
+  stroke: var(--color-ink);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.eye {
+  fill: var(--color-ink);
+}

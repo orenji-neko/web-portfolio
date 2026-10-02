@@ -1,0 +1,14 @@
+<section
+  class="block"
+  [id]="sectionId()"
+  tabindex="-1"
+  [attr.aria-labelledby]="sectionId() + '-title'"
+>
+  <div class="index">{{ index() }}</div>
+  <div class="body">
+    <div class="mask" data-scroll>
+      <h2 class="mask-in title" [id]="sectionId() + '-title'">{{ heading() }}</h2>
+    </div>
+    <ng-content />
+  </div>
+</section>

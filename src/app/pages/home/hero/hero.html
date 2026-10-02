@@ -1,0 +1,70 @@
+@let p = profile();
+<section class="hero" aria-labelledby="hero-title">
+  <div class="eyebrow anim-lift" style="animation-delay: 0.1s">
+    <span class="status"><span class="dot anim-pulse"></span>{{ p.status }}</span>
+    <span>{{ p.role }}</span>
+    <span>{{ p.location }}</span>
+  </div>
+
+  <!-- Words are spans for the entrance; the label gives screen readers the plain sentence. -->
+  <h1
+    id="hero-title"
+    class="headline"
+    data-scroll
+    data-scroll-speed="0.03"
+    [attr.aria-label]="p.tagline"
+  >
+    @for (word of words(); track $index) {
+      <span class="anim-word" aria-hidden="true" [style.animation-delay.s]="0.2 + $index * 0.06">{{
+        word
+      }}</span
+      >{{ ' ' }}
+    }
+    @if (highlight()) {
+      <span
+        class="anim-word"
+        aria-hidden="true"
+        [style.animation-delay.s]="0.2 + words().length * 0.06"
+        ><span class="highlight anim-sweep">{{ highlight() }}</span></span
+      >
+    }
+  </h1>
+
+  <div class="intro">
+    <div class="bio">
+      @for (para of p.bio; track $index) {
+        <p class="anim-lift" [class.lead]="$first" [style.animation-delay.s]="0.85 + $index * 0.1">
+          {{ para }}
+        </p>
+      }
+      <div class="actions anim-lift" style="animation-delay: 1.05s">
+        <a class="btn btn--accent nudge-down" appScrollTo="contact"
+          >Get in touch <app-arrow-icon dir="down"
+        /></a>
+        @if (github(); as url) {
+          <a class="btn nudge" [href]="url" target="_blank" rel="noopener noreferrer"
+            >GitHub <app-arrow-icon
+          /></a>
+        }
+      </div>
+    </div>
+
+    <!-- Parallax lives on the wrapper so it never fights the card's entrance animation. -->
+    <div class="spec-wrap" data-scroll data-scroll-speed="0.08">
+      <div class="spec anim-lift" style="animation-delay: 0.9s">
+        <div class="spec-head">
+          <span>spec.sheet</span>
+          <span>&#64;{{ p.handle }}</span>
+        </div>
+        <dl class="spec-list">
+          @for (row of p.specs; track row.label) {
+            <div class="spec-row anim-slide" [style.animation-delay.s]="1.1 + $index * 0.08">
+              <dt>{{ row.label }}</dt>
+              <dd>{{ row.value }}</dd>
+            </div>
+          }
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>

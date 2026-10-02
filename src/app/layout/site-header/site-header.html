@@ -1,0 +1,11 @@
+<header class="header anim-drop">
+  <a class="brand" appScrollTo="top">
+    <app-logo-mark />
+    <span class="name">{{ profile().name }}</span>
+  </a>
+  <nav class="nav" aria-label="Primary">
+    @for (section of sections(); track section.id) {
+      <a class="nav-link" [appScrollTo]="section.id">{{ section.label }}</a>
+    }
+  </nav>
+</header>
