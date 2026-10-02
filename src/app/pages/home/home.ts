@@ -1,22 +1,31 @@
-import { Component, computed, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { Content } from '../../services/content';
-import { GlitchText } from '../../ui/glitch-text/glitch-text';
-import { TerminalLine } from '../../ui/terminal-line/terminal-line';
-import { HazardDivider } from '../../ui/hazard-divider/hazard-divider';
+import { Component, DestroyRef, afterNextRender, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SmoothScroll } from '../../services/smooth-scroll';
+import { Hero } from './hero/hero';
+import { Work } from './work/work';
+import { Experience } from './experience/experience';
+import { Toolbox } from './toolbox/toolbox';
+import { Contact } from './contact/contact';
 
-/** Landing screen: hero + a grid of channel launchers. */
+/**
+ * The single page. Starts smooth scrolling once its sections are in the DOM
+ * (Locomotive scans `[data-scroll]` elements once, on start).
+ */
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, GlitchText, TerminalLine, HazardDivider],
+  imports: [Hero, Work, Experience, Toolbox, Contact],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home {
-  private readonly content = inject(Content);
-  protected readonly profile = this.content.profile;
-  /** Channels excluding "home" itself, for the launcher grid. */
-  protected readonly launchers = computed(() =>
-    this.content.channels().filter((c) => c.path !== '/home'),
-  );
+  private readonly scroll = inject(SmoothScroll);
+  private readonly fragment = inject(ActivatedRoute).snapshot.fragment;
+
+  constructor() {
+    afterNextRender(() => {
+      void this.scroll.init();
+      void this.scroll.alignToFragment(this.fragment);
+    });
+    inject(DestroyRef).onDestroy(() => this.scroll.destroy());
+  }
 }

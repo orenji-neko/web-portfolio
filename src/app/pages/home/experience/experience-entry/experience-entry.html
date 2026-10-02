@@ -1,0 +1,23 @@
+@let e = item();
+<div class="period">{{ e.period }}</div>
+<div class="body">
+  <h3 class="role">{{ e.role }}</h3>
+  <div class="org">{{ e.org }}</div>
+
+  @if (e.metric; as m) {
+    <div class="metric">
+      <span class="metric-value"
+        >{{ m.before }} <span class="metric-after">{{ m.after }}</span></span
+      >
+      <span class="metric-caption">{{ m.caption }}</span>
+    </div>
+  }
+
+  <ul class="highlights">
+    @for (highlight of e.highlights; track $index) {
+      <li>
+        <span class="marker" aria-hidden="true"></span><span>{{ highlight }}</span>
+      </li>
+    }
+  </ul>
+</div>

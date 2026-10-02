@@ -1,0 +1,11 @@
+@let e = item();
+<div class="period">{{ e.period }}</div>
+<div class="body">
+  <h3 class="degree">{{ e.degree }}</h3>
+  <div class="school">{{ e.school }}</div>
+  @if (e.honors) {
+    <div class="honors">
+      <span class="chip">{{ e.honors }}</span>
+    </div>
+  }
+</div>

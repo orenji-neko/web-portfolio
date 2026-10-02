@@ -1,0 +1,39 @@
+:host {
+  display: block;
+}
+
+.block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 48px;
+  padding: 28px 0 clamp(72px, 9vw, 128px);
+  border-top: 1px solid var(--color-ink);
+}
+
+.index {
+  flex: 0 0 200px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-ink-muted);
+}
+
+.body {
+  flex: 1 1 560px;
+  min-width: 0;
+}
+
+/* Clips the heading while it slides up; the padding keeps descenders visible. */
+.mask {
+  overflow: hidden;
+  margin: 0 0 40px;
+  padding-bottom: 6px;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}

@@ -1,0 +1,24 @@
+:host {
+  display: inline-block;
+}
+
+.social {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1.5px solid var(--color-ink);
+  border-radius: 999px;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.handle {
+  font-family: var(--font-mono);
+  font-size: 14px;
+}

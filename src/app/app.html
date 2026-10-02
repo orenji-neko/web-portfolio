@@ -1,11 +1,8 @@
-@if (!booted()) {
-  <app-boot />
-}
-
-<app-crt-frame>
-  <app-channel-nav />
-  <main class="outlet">
+<!-- `#top` is the "back to top" target; tabindex lets it take focus after the jump. -->
+<div id="top" class="wrap" tabindex="-1">
+  <app-site-header />
+  <main>
     <router-outlet />
   </main>
-  <app-status-bar />
-</app-crt-frame>
+  <app-site-footer />
+</div>

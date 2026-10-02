@@ -1,0 +1,10 @@
+<app-section-block sectionId="experience" index="02" heading="Experience &amp; education">
+  <ol class="timeline">
+    @for (item of experience(); track item.id) {
+      <li appExperienceEntry [item]="item"></li>
+    }
+    @for (item of education(); track item.id) {
+      <li appEducationEntry [item]="item"></li>
+    }
+  </ol>
+</app-section-block>

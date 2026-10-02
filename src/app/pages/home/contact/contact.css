@@ -1,0 +1,56 @@
+:host {
+  display: block;
+}
+
+.contact {
+  padding: clamp(32px, 6vw, 80px);
+  border-radius: 4px;
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+.index {
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.heading {
+  margin: 24px 0 0;
+  max-width: 16ch;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(36px, 5.6vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.blurb {
+  margin: 16px 0 0;
+  font-size: 20px;
+}
+
+.email {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  margin-top: 40px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(18px, 3vw, 40px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+}

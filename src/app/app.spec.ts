@@ -1,27 +1,33 @@
 import { TestBed } from '@angular/core/testing';
-import { provideRouter } from '@angular/router';
+import { Router, provideRouter } from '@angular/router';
 import { App } from './app';
+import { routes } from './app.routes';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
-      providers: [provideRouter([])],
+      providers: [provideRouter(routes)],
     }).compileComponents();
   });
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('should render the CRT shell with channel navigation', async () => {
+  it('renders the header nav, every section and the footer', async () => {
     const fixture = TestBed.createComponent(App);
+    await TestBed.inject(Router).navigateByUrl('/');
     await fixture.whenStable();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('app-crt-frame')).toBeTruthy();
-    expect(compiled.querySelector('app-channel-nav')).toBeTruthy();
-    expect(compiled.querySelector('app-status-bar')).toBeTruthy();
+    const el = fixture.nativeElement as HTMLElement;
+
+    const hrefs = Array.from(el.querySelectorAll('nav a')).map((a) => a.getAttribute('href'));
+    expect(hrefs).toEqual(['#work', '#experience', '#toolbox', '#contact']);
+
+    for (const id of ['work', 'experience', 'toolbox', 'contact']) {
+      expect(el.querySelector(`section#${id}`), `section#${id}`).toBeTruthy();
+    }
+    expect(el.querySelector('footer')).toBeTruthy();
   });
 });

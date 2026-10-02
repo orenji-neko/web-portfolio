@@ -1,0 +1,9 @@
+:host {
+  display: block;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}

@@ -1,0 +1,7 @@
+@let g = group();
+<h3 class="title"><span class="square" aria-hidden="true"></span>{{ g.title }}</h3>
+<ul class="items">
+  @for (item of g.items; track item) {
+    <li>{{ item }}</li>
+  }
+</ul>
