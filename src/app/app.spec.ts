@@ -2,12 +2,14 @@ import { TestBed } from '@angular/core/testing';
 import { Router, provideRouter } from '@angular/router';
 import { App } from './app';
 import { routes } from './app.routes';
+import { Views } from './services/views';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
-      providers: [provideRouter(routes)],
+      // Never hit the real view counter from tests.
+      providers: [provideRouter(routes), { provide: Views, useValue: { track: () => {} } }],
     }).compileComponents();
   });
 
