@@ -1,6 +1,6 @@
 import { DOCUMENT, Injectable, inject } from '@angular/core';
 
-/** API Gateway endpoint of the portfolio-web-views Lambda. */
+/** API Gateway endpoint of the portfolio-web-views Lambda Function. */
 const VIEWS_URL =
   'https://7y0klzm5bg.execute-api.ap-southeast-1.amazonaws.com/default/portfolio-web-views';
 
