@@ -12,5 +12,11 @@ export const routes: Routes = [
   { path: 'projects', redirectTo: toSection('work') },
   { path: 'experience', redirectTo: toSection('experience') },
   { path: 'contact', redirectTo: toSection('contact') },
+  /** Unlisted: not in the nav, marked noindex. */
+  {
+    path: 'test/ads',
+    title: 'Ad test',
+    loadComponent: () => import('./pages/test-ads/test-ads').then((m) => m.TestAds),
+  },
   { path: '**', redirectTo: '' },
 ];

@@ -20,4 +20,10 @@ describe('routes', () => {
     await harness.navigateByUrl(from);
     expect(TestBed.inject(Router).url).toBe(to);
   });
+
+  it('serves the unlisted /test/ads page instead of redirecting', async () => {
+    const harness = await RouterTestingHarness.create();
+    await harness.navigateByUrl('/test/ads');
+    expect(TestBed.inject(Router).url).toBe('/test/ads');
+  });
 });

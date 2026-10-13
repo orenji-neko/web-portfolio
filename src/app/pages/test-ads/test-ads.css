@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+.test {
+  padding: clamp(48px, 7vw, 96px) 0;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: -0.03em;
+}
+
+.note {
+  margin: 8px 0 40px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-ink-muted);
+}
